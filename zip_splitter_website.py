@@ -5,6 +5,14 @@ import tempfile
 
 st.set_page_config(page_title="ZIP Splitter", page_icon="📦", layout="centered")
 
+import streamlit as st
+
+st.set_page_config(page_title="ZIP Splitter", page_icon="📂", layout="centered", menu_items={
+    'Get Help': None,
+    'Report a bug': None,
+    'About': None
+})
+
 st.title("📦 ZIP Splitter App (Preserves Folder Structure)")
 st.write("Upload a ZIP and split it into smaller parts while keeping folders intact.")
 
@@ -128,3 +136,4 @@ if st.session_state.split_done:
             shutil.rmtree(st.session_state.output_dir.parent, ignore_errors=True)
         st.session_state.clear()
         st.rerun()
+
